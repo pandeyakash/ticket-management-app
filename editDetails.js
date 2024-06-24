@@ -1,5 +1,6 @@
 const url = `http://localhost:1818/tickets`;
 let id = localStorage.getItem("editID");
+console.log(id);
 
 const form = document.querySelector("form");
 
@@ -13,7 +14,7 @@ async function getData() {
 
 function displayData(data) {
   data.forEach((ele) => {
-    if (ele.id === 3) {
+    if (ele.id == id) {
       document.getElementById("task-title").value = ele.title;
       document.getElementById("task-description").value = ele.description;
       document.getElementById("task-dueDate").value = ele.dueDate;
